@@ -1,1 +1,1 @@
-# css-animation-practice
+# css-practice
