@@ -1,0 +1,218 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%;
+  margin: 0; }
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* 设置为 flex 项目 */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* 方向改变了 */ }
+
+main {
+  font-family: Lato, sans-serif;
+  font-size: 0.9em;
+  background-color: #fff;
+  color: #222;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  /* 填满剩余空间
+                     自动计算 flex 项目的大小，但是不要收缩
+                  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* 设置为 flex 项目
+                    display: flex; 可以嵌套使用
+                 */ }
+  main aside {
+    background-color: #f2f2f2;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40px;
+            flex: 0 0 40px;
+    /* 固定在宽度 40px */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 设置为 flex 项目 */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* 方向改变了 */
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    /* 垂直方向 */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* 图标在水平方向居中 */ }
+  main .content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    /* 填满剩余空间 */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    main .content .music-head {
+      background-color: #4e4e4e;
+      padding: 40px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 200px;
+              flex: 0 0 200px;
+      /* 固定在高度 200px */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      main .content .music-head img {
+        width: 200px; }
+      main .content .music-head .queen-music {
+        font-weight: 350;
+        color: #fff;
+        padding-left: 50px;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        main .content .music-head .queen-music div:nth-child(1) {
+          margin-bottom: auto; }
+          main .content .music-head .queen-music div:nth-child(1) p:first-child {
+            font-size: 1.8em;
+            margin: 0 0 10px; }
+          main .content .music-head .queen-music div:nth-child(1) p:not(:first-child) {
+            font-size: .9em;
+            margin: 2px 0; }
+        main .content .music-head .queen-music div:nth-child(2) {
+          margin-top: 0; }
+          main .content .music-head .queen-music div:nth-child(2) i.fa {
+            font-size: .9em;
+            padding: 0 .7em;
+            font-weight: 300; }
+    main .content .music-list {
+      list-style: none;
+      padding: 5px 10px 0;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 auto;
+              flex: 1 0 auto; }
+      main .content .music-list li {
+        padding: 0 20px;
+        min-height: 50px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        main .content .music-list li p {
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 25%;
+                  flex: 0 0 25%; }
+      main .content .music-list li:nth-child(2n) {
+        background-color: #f2f2f2; }
+      main .content .music-list li span.queen-cloud {
+        border: 1px solid #000;
+        font-size: .6em;
+        padding: 3px; }
+
+footer {
+  background-color: rgba(61, 100, 158, 0.9);
+  color: #fff;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 90px;
+          flex: 0 0 90px;
+  /* 固定在高度 90px， 不会放大或缩小 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  footer .playing {
+    padding: 10px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70%;
+            flex: 0 0 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    footer .playing img {
+      width: 70px;
+      height: 70px; }
+    footer .playing div:nth-child(2) {
+      padding-left: 10px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+      footer .playing div:nth-child(2) p {
+        margin: 0;
+        font-size: 14px; }
+  footer .controls {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+@media screen and (max-width: 1024px) {
+  .sm-hide {
+    display: none; }
+  i.sm-hide {
+    display: none; }
+  main .content .music-head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    main .content .music-head img {
+      width: 150px;
+      height: 150px; }
+    main .content .music-head .queen-music {
+      padding: 0;
+      text-align: center;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto; }
+      main .content .music-head .queen-music div:nth-child(1) p:first-child {
+        font-size: 1em;
+        margin: 20px 0; }
+  main .content .music-list li {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    main .content .music-list li p:nth-child(1) {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 50%;
+              flex: 0 0 50%; }
+    main .content .music-list li p:nth-child(3) {
+      text-align: right; }
+  footer .playing {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%; } }

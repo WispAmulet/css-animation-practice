@@ -1,0 +1,206 @@
+
+ul {
+  list-style: none;
+  height: 50px;
+  padding: 0;
+  border: 1px solid red;
+  background-color: #e8e8e9;
+
+  display: flex;
+
+  & li {
+      background-color: #8cacea;
+      color: #fff;
+      // border: 2px solid red;
+      margin: 8px;
+      padding: 5px;
+
+      flex: none; /* 0 0 auto */
+  }
+}
+
+ul:nth-of-type(2) {
+
+  & li:nth-child(1) {
+    margin-right: auto; /*
+                           当在 flex 项目上使用 margin: auto 时，
+                           值为 auto 的方向（左、右或者二者都是）会占据所有剩余空间
+                        */
+  }
+}
+
+ul:nth-of-type(3) {
+  justify-content: center; /*
+                              当 flex 项目设置了 margin: auto 时，
+                              该属性失效
+                           */
+
+  & li:nth-child(1) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.bootstrap {
+  margin: 0;
+
+  & ul {
+    height: 70px;
+    margin: 0;
+    padding: 0 30px;
+    border: none;
+
+    & li {
+      background-color: #e8e8e9;
+      color: #333;
+      margin: 18px;
+
+      &:nth-child(1) {
+        margin-right: auto;
+        padding: 1px;
+      }
+    }
+  }
+
+  & .content {
+    height: 50px;
+    background-color: #8cacea;
+  }
+}
+
+.container {
+  margin-top: 50px;
+  background-color: #f5f8fa;
+  border: 1px solid #999;
+  border-bottom: none;
+  height: 200px;
+
+}
+.twitter {
+  background-color: #fff;
+  padding: 1px 2px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  & ul {
+    background-color: #fff;
+    border: none;
+    margin: 0;
+    width: 70%;
+    margin: auto;
+
+    & li {
+      background-color: #fff;
+      
+      font-size: 14px;
+      margin: 0;
+      padding: 0 10px 0 10px;
+      height: 46px;
+      line-height: 50px;
+      transition: all .1s ease-in-out;
+
+      & a {
+        text-decoration: none;
+        color: #66757f;
+
+        &:hover {
+          color: #9266cc;
+        }
+      }
+
+      & i {
+        font-size: 20px;
+        margin-right: 3px;
+      }
+      
+      &.selected {
+        border-bottom: 4px solid #66757f;
+      }
+
+      &:nth-child(1):hover,
+      &:nth-child(2):hover,
+      &:nth-child(3):hover {
+        border-bottom: 4px solid #66757f;
+      }
+
+      &:nth-child(1) {
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 5px;
+          width: 6px;
+          height: 6px;
+          border-radius: 6px;
+          background-color: #66757f;
+
+          &:hover {
+            color: #9266cc;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        margin: auto;
+
+        & i {
+          font-size: 24px;
+          color: #1da1f2;
+        } 
+      }
+
+      &:nth-last-child(3) {
+        
+        & input {
+          // width: 500px;
+          height: 30px;
+          padding: 5px;
+          background-color: #f5f8fa;
+          border: 1px solid #dad6d6;
+          border-radius: 20px;
+          outline: none;
+          transition: all .2s ease-in-out;
+
+          &:focus {
+            background-color: #fff;
+          }
+        }
+
+        & span {
+          color: #969393;
+          margin-left: -30px;
+        }
+      }
+
+      &:nth-last-child(2) {
+        & a {
+          & img {
+            width: 32px;
+            margin-top: 8px;
+            border: 1px solid #dedada;
+            border-radius: 32px;
+          }
+        }
+      }
+
+      &:nth-last-child(1) {
+        & button {
+          height: 32px;
+          line-height: 24px;
+          padding: 0 10px;
+          border: 2px solid #b88fef;
+          border-radius: 5px;
+          background-color: #ad80e8;
+          color: #fff;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            background-color: #9266cc;
+            border: 2px solid #9266cc;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+ul {
+  list-style: none;
+  height: 500px;
+  padding: 0;
+  border: 1px solid red;
+  background-color: #e8e8e9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*
+                             改变了整个主轴和交叉轴的方向
+                          */ }
+  ul li {
+    width: 100px;
+    background-color: #8cacea;
+    color: #fff;
+    margin: 8px;
+    padding: 5px;
+    -ms-flex-preferred-size: 100px;
+        flex-basis: 100px;
+    /*
+                          方向也改变了，宽度变成了高度
+                       */ }

@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+  height: 500px;
+  padding: 0;
+  border: 1px solid red;
+  background-color: #e8e8e9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* flex | inline-flex */
+  /* flex-direction | flex-wrap| flex-flow | justify-content | align-items | align-content */ }
+
+li {
+  width: 100px;
+  background-color: #8cacea;
+  color: #fff;
+  margin: 8px;
+  padding: 5px;
+  /* order | flex-grow | flex-shrink | flex-basis | flex | align-self */ }
