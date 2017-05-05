@@ -1,0 +1,142 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0; }
+
+/* basic */
+.grid {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 100px; }
+  .grid div {
+    padding: 20px; }
+  .grid .item-1 {
+    background: #b03532; }
+  .grid .item-2 {
+    background: #33a8a5; }
+  .grid .item-3 {
+    background: #30997a; }
+  .grid .item-4 {
+    background: #6a478f; }
+  .grid .item-5 {
+    background: #da6f2b; }
+  .grid .item-6 {
+    background: #3d8bb1; }
+  .grid .item-7 {
+    background: #e03f3f; }
+  .grid .item-8 {
+    background: #59a627; }
+  .grid .item-9 {
+    background: #4464a1; }
+
+/*
+创建一个容器，通过display:grid;声明这个容器是一个网格容器
+同样在容器中设置grid-template-columns和grid-template-rows声明网格轨道(声明行和列)
+在网格容器中添加子元素，创建网格项目(单元格)
+使用grid-column和grid-row来指定网格项目（单元格）的列和行
+*/
+.grid-1 {
+  display: grid;
+  grid-template-columns: 30% 5% 30% 5% 30%;
+  grid-template-rows: auto 20px auto 20px auto; }
+  .grid-1 .item-1 {
+    grid-column: 1;
+    grid-row: 1; }
+  .grid-1 .item-2 {
+    grid-column: 3;
+    grid-row: 1; }
+  .grid-1 .item-3 {
+    grid-column: 5;
+    grid-row: 1; }
+  .grid-1 .item-4 {
+    grid-column: 1;
+    grid-row: 3; }
+  .grid-1 .item-5 {
+    grid-column: 3;
+    grid-row: 3; }
+  .grid-1 .item-6 {
+    grid-column: 5;
+    grid-row: 3; }
+  .grid-1 .item-7 {
+    grid-column: 1;
+    grid-row: 5; }
+  .grid-1 .item-8 {
+    grid-column: 3;
+    grid-row: 5; }
+  .grid-1 .item-9 {
+    grid-column: 5;
+    grid-row: 5; }
+
+/*
+网格接受自适应和固定两种单位组合使用
+不需要在grid-template中声明网格间距，可以直接使用grid-gap来直接声明网格之间间距
+在网格布局中不显式声明grid-gap，可以使用自适应布局来自动计算他们之间间距
+repeat()函数可以帮我们节省很多时间，而且更好的维护我们的网格布局
+fr是一个非常强大的单位，可以按百分比来布局网格
+*/
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; }
+
+/*
+grid-column是grid-column-start和grid-column-end的缩写，用来定义一个网格项目开始和结束的简便方法
+可以使用span关键词实现网格合并，让规则变得更灵活
+使用grid-template-areas来声明网格区域名称，甚至可以使用表情符来声明网格区域
+可能在网格项目中使用display:grid来声明网格项目是一个网格容器，实现网格的嵌套
+*/
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 20px; }
+  .grid-3 .item-1 {
+    grid-column: 1/span 2;
+    grid-row: 1/span 2; }
+  .grid-3 .item-4 {
+    grid-column: 3;
+    grid-row: 2/span 2; }
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 80px 200px 80px;
+  grid-gap: 20px;
+  grid-template-areas: "header header header" "main main sidebar" "footer footer footer"; }
+  .grid-4 .item-1 {
+    grid-area: header; }
+  .grid-4 .item-2 {
+    grid-area: main; }
+  .grid-4 .item-3 {
+    grid-area: sidebar; }
+  .grid-4 .item-4 {
+    grid-area: footer; }
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 80px 200px 80px;
+  grid-gap: 20px;
+  grid-template-areas: "header header header" "main main sidebar" "footer footer footer"; }
+  .grid-5 .item-1 {
+    grid-area: header; }
+  .grid-5 .item-2 {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    grid-template-areas: "header header" "article sidebar"; }
+    .grid-5 .item-2 .item-5 {
+      grid-area: header; }
+    .grid-5 .item-2 .item-6 {
+      grid-area: article; }
+    .grid-5 .item-2 .item-7 {
+      grid-area: sidebar; }
+  .grid-5 .item-3 {
+    grid-area: sidebar; }
+  .grid-5 .item-4 {
+    grid-area: footer; }
