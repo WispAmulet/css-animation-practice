@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BBC - Home</title>
+  <title>Document</title>
 
   <link rel="stylesheet" href="./stylesheets/screen-practice02.css">
   <link rel="stylesheet" href="./docs/css/font-awesome.min.css">
@@ -23,7 +23,7 @@
         </div> <!-- /.logo -->
 
         <div class="sign-in">
-          <a href="#"><i class="fa fa-user-circle"></i><span>Sign in</span></a>
+          <a href="#"><i class="fa fa-user-circle"></i><span class="hide">Sign in</span></a>
         </div> <!-- /.sign-in -->
 
         <div class="navbar">
@@ -33,8 +33,25 @@
             <a href="#">Shop</a>
             <a href="#">Earth</a>
             <a href="#">Travel</a>
-            <a href="#">More</a>
+            <a href="#" class="hidden">Capital</a>
+            <a href="#" class="hidden">Culture</a>
+            <a href="#" class="hidden">Futurn</a>
+            <a href="#" class="hidden">TV</a>
+            <a href="#" class="hidden">Radio</a>
+            <a href="#" class="hidden">CBBC</a>
+            <a href="#" class="hidden">CBeebies</a>
+            <a href="#" class="hidden">Food</a>
+            <a href="#" class="hidden">Bitesize</a>
+            <a href="#" class="hidden">Music</a>
+            <a href="#" class="hidden">Arts</a>
+            <a href="#" class="hidden">Make it Digital</a>
+            <a href="#" class="hidden">Taster</a>
+            <a href="#" class="hidden">Nature</a>
+            <a href="#" class="hidden">Local</a>
+            <a href="#" id="more" class="actived">More</a>
         </div> <!-- /.navbar -->
+
+        
 
         <div class="search">
           <form>
@@ -44,6 +61,38 @@
         </div>
 
       </div> <!-- /.nav -->
+
+      <div class="nav-hidden" style="height: 0;">
+
+        <div class="container" style="display: none;">
+
+          <div class="box">
+
+            <h2 class="hidden">MORE</h2>
+
+            <div class="navbar-hidden">
+              <a href="#" class="hidden">Capital</a>
+              <a href="#" class="hidden">Culture</a>
+              <a href="#" class="hidden">Futurn</a>
+              <a href="#" class="hidden">TV</a>
+              <a href="#" class="hidden">Radio</a>
+              <a href="#" class="hidden">CBBC</a>
+              <a href="#" class="hidden">CBeebies</a>
+              <a href="#" class="hidden">Food</a>
+              <a href="#" class="hidden">Bitesize</a>
+              <a href="#" class="hidden">Music</a>
+              <a href="#" class="hidden">Arts</a>
+              <a href="#" class="hidden">Make it Digital</a>
+              <a href="#" class="hidden">Taster</a>
+              <a href="#" class="hidden">Nature</a>
+              <a href="#" class="hidden">Local</a>
+            </div> <!-- /.navbar-hidden -->
+          </div> <!-- /.box -->
+
+        </div> <!-- /. container -->
+
+        </div> <!-- /.nav-hidden -->
+
     </header> <!-- /header -->
 
     <main>
@@ -258,7 +307,7 @@
             <li><a href="#">Bitesize</a></li>
             <li><a href="#">Music</a></li>
             <li><a href="#">Arts</a></li>
-            <li><a href="#">Make it  Digital</a></li>
+            <li><a href="#">Make it Digital</a></li>
             <li><a href="#">Taster</a></li>
             <li><a href="#">Nature</a></li>
             <li><a href="#">Local</a></li>
@@ -283,6 +332,69 @@
     </footer> <!-- /footer -->
 
   </div> <!-- /.container -->
+
+
+  <script>
+
+  var more = document.querySelector('#more');
+  var navHidden = document.querySelector('.nav-hidden');
+  var navContainer = document.querySelector('.nav-hidden .container');
+
+  // function heightChange() {
+  //   var height = navHidden.style.getPropertyValue('height');
+  //   if (height == '0px') {
+  //     height = '125px';
+  //   } else {
+  //     height = 0;
+  //   }
+  //   console.log(height);
+  //   navHidden.style.setProperty('height', height);
+  // }
+  // function  valChange() {
+  //   var val = navContainer.style.getPropertyValue('display');
+  //   if (val == 'none') {
+  //     val = 'flex';
+  //   } else {
+  //     val = 'none';
+  //   }
+  //   console.log(val);
+  //   navContainer.style.setProperty('display', val);
+  // }
+  // function navbarSwitch() {
+  //   heightChange();
+  //   setTimeout(valChange, 400);
+  // }
+  // more.addEventListener('click', navbarSwitch);
+
+  function heightChange(height) {
+    navHidden.style.setProperty('height', height);
+  }
+
+  function valChange(val) {
+    navContainer.style.setProperty('display', val);
+  }
+
+  function navbarSwitch() {
+    var height = navHidden.style.getPropertyValue('height');
+    var val = navContainer.style.getPropertyValue('display');
+    if (height = '125px' && val == 'block') {
+      height = 0;
+      heightChange(height);
+      val = 'none';
+      setTimeout(function() {
+        valChange(val);
+      }, 400);
+      // setTimeout(valChange, 400);
+    } else {
+      height = '125px';
+      val = 'block';
+      heightChange(height);
+      valChange(val);
+    }
+  }
+  more.addEventListener('click', navbarSwitch);
+
+  </script>
 
 
 </body>
