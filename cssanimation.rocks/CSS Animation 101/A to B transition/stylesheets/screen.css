@@ -1,0 +1,36 @@
+body {
+  background-color: #fcf5f2; }
+
+.change {
+  background: #37a1d9;
+  width: 14em;
+  height: 14em;
+  border: 1em solid #fff;
+  position: absolute;
+  top: calc(50% - 8em);
+  left: calc(50% - 8em);
+  border-radius: 2em;
+  -webkit-animation: change 5s ease-out infinite;
+          animation: change 5s ease-out infinite; }
+
+@-webkit-keyframes change {
+  0% {
+    border-radius: 0;
+    background-color: #37a1d9; }
+  40%, 60% {
+    border-radius: 50%;
+    background-color: #f5cc5e; }
+  100% {
+    border-radius: 0;
+    background-color: #37a1d9; } }
+
+@keyframes change {
+  0% {
+    border-radius: 0;
+    background-color: #37a1d9; }
+  40%, 60% {
+    border-radius: 50%;
+    background-color: #f5cc5e; }
+  100% {
+    border-radius: 0;
+    background-color: #37a1d9; } }

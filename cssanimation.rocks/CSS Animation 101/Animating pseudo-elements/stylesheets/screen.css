@@ -1,0 +1,35 @@
+button {
+  background: #d1703c;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 0.5em;
+  height: 3em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 2em; }
+  button:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(to bottom, rgba(209, 112, 60, 0), rgba(255, 255, 255, 0.5) 50%, rgba(209, 112, 60, 0));
+    -webkit-transform: rotateZ(60deg) translate(-5em, 7.5em);
+            transform: rotateZ(60deg) translate(-5em, 7.5em); }
+
+button:hover::after, button:focus::after {
+  -webkit-animation: sheen 1s forwards;
+          animation: sheen 1s forwards; }
+
+@-webkit-keyframes sheen {
+  100% {
+    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
+            transform: rotateZ(60deg) translate(1em, -9em); } }
+
+@keyframes sheen {
+  100% {
+    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
+            transform: rotateZ(60deg) translate(1em, -9em); } }
