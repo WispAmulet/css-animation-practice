@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #134;
+  transition: all .4s ease-in-out;
+}
+body.on {
+  background: #099;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#show-element {
+  background-color: #134;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 25px 50px;
+  transition: all .4s ease-out;
+}
+#show-element:hover, #show-element.active {
+  background-color: #fff;
+  color: #099;
+}
+#show-element:focus {
+  outline: none;
+}
+
+#to-show {
+  color: #fff;
+  transition: all .5s ease-in;
+}
+#to-show.hide {
+  opacity: 0;
+  display: hidden;
+}
+#to-show.on {
+  opacity: 1;
+  display: block;
+}

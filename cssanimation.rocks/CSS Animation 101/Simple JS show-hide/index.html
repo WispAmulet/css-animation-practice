@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./stylesheet/screen.css">
+
+</head>
+<body>
+
+  <div class=container>
+    <button id="show-element">Show it</button>
+    <div id="to-show" class="hide">
+      <h1>Some hidden content</h1>
+      <p>Pressing the button shows this content. Nice!</p>
+    </div>
+  </div>
+
+<script>
+  const body = document.querySelector('body');
+  const btn = document.querySelector('#show-element');
+  const div =document.querySelector('.hide');
+  function addClass() {
+    console.log('ssss');
+    if (div.className === 'hide') {
+      body.className = 'on';
+      btn.className = 'active';
+      div.className = 'show';
+    } else {
+      body.className = '';
+      btn.className = '';
+      div.className = 'hide';
+    }
+  }
+  btn.addEventListener('click', addClass);
+</script>
+
+</body>
+</html>
